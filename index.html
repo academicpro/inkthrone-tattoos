@@ -247,6 +247,60 @@ section {
     cursor: pointer;
 }
 
+/* DEPOSIT SELECTION CARDS */
+
+.booking-form h3 {
+    color: #c5a253;
+    margin: 30px 0 18px;
+    font-size: 22px;
+}
+
+.deposit-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.deposit-card {
+    display: block;
+    padding: 22px;
+    background: #080808;
+    border: 1px solid #555;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+.deposit-card:hover {
+    border-color: #c5a253;
+    transform: translateY(-3px);
+}
+
+.deposit-card input {
+    width: auto;
+    margin-right: 8px;
+    accent-color: #c5a253;
+}
+
+.deposit-card strong {
+    display: block;
+    color: #c5a253;
+    font-size: 23px;
+    margin-top: 12px;
+}
+
+.deposit-card:has(input:checked) {
+    border: 2px solid #c5a253;
+    background: #211b0e;
+}
+
+@media(max-width: 600px) {
+    .deposit-options {
+        grid-template-columns: 1fr;
+    }
+}
 /* CONTACT */
 
 .contact {
@@ -501,34 +555,39 @@ Submit your appointment request below.
     <input type="time" name="appointmentTime" required>
 
 
-   <h3>Select Your Booking Deposit</h3>
+ <h3>Select Your Booking Deposit</h3>
 
 <p>Choose your booking deposit amount:</p>
 
-<label>
-    <input type="radio" name="deposit" value="100"> required>
-   Small Tattoo — $100
-</label>
+<div class="deposit-options">
 
-<label>
-    <input type="radio" name="deposit" value="120">
-   Medium Tattoo — $120
-</label>
+    <label class="deposit-card">
+        <input type="radio" name="deposit" value="100" required>
+        Small Tattoo
+        <strong>$100</strong>
+    </label>
 
-<label>
-    <input type="radio" name="deposit" value="150">
-    Large Tattoo — $150
-</label>
+    <label class="deposit-card">
+        <input type="radio" name="deposit" value="120">
+        Medium Tattoo
+        <strong>$120</strong>
+    </label>
 
-<label>
-    <input type="radio" name="deposit" value="200">
-    Extra Large Tattoo — $200
-</label>
+    <label class="deposit-card">
+        <input type="radio" name="deposit" value="150">
+        Large Tattoo
+        <strong>$150</strong>
+    </label>
 
-<p>
-    Deposits are refundable according to our booking
-    and refund policy.
-</p>
+    <label class="deposit-card">
+        <input type="radio" name="deposit" value="200">
+        Extra Large Tattoo
+        <strong>$200</strong>
+    </label>
+
+</div>
+
+<p>Deposits are refundable according to our booking and refund policy.</p>
 
     <button type="submit">
         CONTINUE TO BOOKING & PAYMENT
