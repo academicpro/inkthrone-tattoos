@@ -1,1 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>INKTHRONE TATTOOS | Professional Tattoo Artistry</title>
+
+<meta name="description" content="Discover exceptional tattoo artistry at INKTHRONE TATTOOS. Explore custom tattoos, fine lines, cover-ups and more. Request your appointment today.">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    background: #080808;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #a88746;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #d4af60;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 23px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d4af60;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
+    url('https://images.unsplash.com/photo-1598373182133-52452f7691ef?auto=format&fit=crop&w=2000&q=85');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 75px);
+    color: #d4af60;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #ddd;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #c5a253;
+    color: #080808;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: white;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: #d4af60;
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    text-align: center;
+    color: #bbb;
+    max-width: 700px;
+    margin: 0 auto 45px;
+    line-height: 1.7;
+}
+
+/* SERVICES */
+
+.services {
+    background: #101010;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: #191919;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    border-color: #d4af60;
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: #d4af60;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #bbb;
+    line-height: 1.6;
+}
+
+/* PORTFOLIO */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    background: #191919;
+    min-height: 250px;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+}
+
+/* ABOUT */
+
+.about {
+    background: #101010;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.9;
+    color: #ccc;
+}
+
+/* LICENSE BADGE */
+
+.license {
+    color: #d4af60;
+    margin-top: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* BOOKING */
+
+.booking {
+    background: #151515;
+}
+
+.booking-form {
+    max-width: 750px;
+    margin: auto;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 18px;
+    background: #080808;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 3px;
+}
+
+.booking-form button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    background: #c5a253;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    background: #080808;
+}
+
+.contact p {
+    color: #bbb;
+    margin: 15px 0;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #050505;
+    border-top: 1px solid #a88746;
+    color: #aaa;
+}
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+INKTHRONE <span>TATTOOS</span>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#about">About</a>
+<a href="#booking">Book Now</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>INKTHRONE TATTOOS</h1>
+
+<h2>Where Art Rules and Ink Reigns.</h2>
+
+<p>
+Transform your vision into timeless body art.
+Discover exceptional tattoo craftsmanship,
+creative designs and personalized tattoo experiences.
+</p>
+
+<a href="#booking" class="button">
+BOOK AN APPOINTMENT
+</a>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<h2 class="section-title">OUR SERVICES</h2>
+
+<p class="section-description">
+Explore our tattoo services and discover the artistry
+behind every design.
+</p>
+
+<div class="service-grid">
+
+<div class="service-card">
+<h3>Custom Tattoo Designs</h3>
+<p>Unique tattoo concepts created around your personal vision.</p>
+</div>
+
+<div class="service-card">
+<h3>Fine Line Tattoos</h3>
+<p>Detailed, elegant and carefully crafted fine line artwork.</p>
+</div>
+
+<div class="service-card">
+<h3>Cover-Up Tattoos</h3>
+<p>Creative designs that transform existing tattoos.</p>
+</div>
+
+<div class="service-card">
+<h3>Bold Tattoos</h3>
+<p>Expressive artwork with strong details and distinctive styles.</p>
+</div>
+
+<div class="service-card">
+<h3>Small Tattoos</h3>
+<p>Beautiful, meaningful designs in smaller sizes.</p>
+</div>
+
+<div class="service-card">
+<h3>Large Tattoos</h3>
+<p>Detailed and ambitious artwork for larger placements.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+<h2 class="section-title">OUR PORTFOLIO</h2>
+
+<p class="section-description">
+Explore our tattoo artwork and discover the creativity,
+precision and craftsmanship behind every piece.
+</p>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">Your Tattoo Image 1</div>
+<div class="gallery-item">Your Tattoo Image 2</div>
+<div class="gallery-item">Your Tattoo Image 3</div>
+<div class="gallery-item">Your Tattoo Image 4</div>
+<div class="gallery-item">Your Tattoo Image 5</div>
+<div class="gallery-item">Your Tattoo Image 6</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<h2 class="section-title">ABOUT INKTHRONE</h2>
+
+<div class="about-content">
+
+<p>
+At INKTHRONE TATTOOS, we believe every tattoo tells a story.
+Our passion is transforming ideas into meaningful,
+creative and lasting artwork.
+
+We are committed to artistic excellence,
+professional customer care, hygiene and safety.
+</p>
+
+<p class="license">
+PROFESSIONAL TATTOO ARTISTRY
+</p>
+
+</div>
+
+</section>
+
+<!-- BOOKING -->
+
+<section class="booking" id="booking">
+
+<h2 class="section-title">BOOK AN APPOINTMENT</h2>
+
+<p class="section-description">
+Ready to bring your tattoo idea to life?
+Submit your appointment request below.
+</p>
+
+<form class="booking-form">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="tel" placeholder="Phone Number" required>
+
+<select required>
+<option value="">Select Tattoo Style</option>
+<option>Custom Design</option>
+<option>Fine Line</option>
+<option>Cover-Up</option>
+<option>Bold Tattoo</option>
+</select>
+
+<select required>
+<option value="">Select Tattoo Size</option>
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
+<option>Extra Large / Full Sleeve</option>
+</select>
+
+<input type="text" placeholder="Preferred Tattoo Placement">
+
+<textarea rows="5" placeholder="Describe your tattoo idea"></textarea>
+
+<input type="file" accept="image/*">
+
+<input type="date">
+
+<button type="submit">
+SUBMIT BOOKING REQUEST
+</button>
+
+</form>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">CONTACT US</h2>
+
+<p>Have questions or a custom tattoo idea?</p>
+
+<p>Get in touch with INKTHRONE TATTOOS.</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 INKTHRONE TATTOOS. All Rights Reserved.</p>
+
+<p>Where Art Rules and Ink Reigns.</p>
+
+</footer>
+
+</body>
+</html>
