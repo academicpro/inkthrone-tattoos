@@ -449,41 +449,90 @@ Ready to bring your tattoo idea to life?
 Submit your appointment request below.
 </p>
 
-<form class="booking-form">
+<form class="booking-form" id="bookingForm">
 
-<input type="text" placeholder="Full Name" required>
+    <h3>Customer Details</h3>
 
-<input type="email" placeholder="Email Address" required>
+    <input type="text" name="fullName"
+    placeholder="Full Name" required>
 
-<input type="tel" placeholder="Phone Number" required>
+    <input type="email" name="email"
+    placeholder="Email Address" required>
 
-<select required>
-<option value="">Select Tattoo Style</option>
-<option>Custom Design</option>
-<option>Fine Line</option>
-<option>Cover-Up</option>
-<option>Bold Tattoo</option>
-</select>
+    <input type="tel" name="phone"
+    placeholder="Phone Number" required>
 
-<select required>
-<option value="">Select Tattoo Size</option>
-<option>Small</option>
-<option>Medium</option>
-<option>Large</option>
-<option>Extra Large / Full Sleeve</option>
-</select>
 
-<input type="text" placeholder="Preferred Tattoo Placement">
+    <h3>Tattoo Details</h3>
 
-<textarea rows="5" placeholder="Describe your tattoo idea"></textarea>
+    <select name="tattooStyle" required>
+        <option value="">Select Tattoo Style</option>
+        <option>Custom Design</option>
+        <option>Fine Line</option>
+        <option>Cover-Up</option>
+        <option>Bold Tattoo</option>
+    </select>
 
-<input type="file" accept="image/*">
+    <select name="tattooSize" required>
+        <option value="">Select Tattoo Size</option>
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+        <option>Extra Large / Full Sleeve</option>
+    </select>
 
-<input type="date">
+    <input type="text" name="placement"
+    placeholder="Preferred Tattoo Placement" required>
 
-<button type="submit">
-SUBMIT BOOKING REQUEST
-</button>
+    <textarea name="description" rows="5"
+    placeholder="Describe your tattoo idea" required></textarea>
+
+    <label>Upload Reference Image (Optional)</label>
+    <input type="file" name="referenceImage"
+    accept="image/*">
+
+
+    <h3>Preferred Appointment</h3>
+
+    <label>Preferred Date</label>
+    <input type="date" name="appointmentDate" required>
+
+    <label>Preferred Time</label>
+    <input type="time" name="appointmentTime" required>
+
+
+   <h3>Select Your Booking Deposit</h3>
+
+<p>Choose your booking deposit amount:</p>
+
+<label>
+    <input type="radio" name="deposit" value="70" required>
+    Small Tattoo — $70
+</label>
+
+<label>
+    <input type="radio" name="deposit" value="100">
+    Medium Tattoo — $100
+</label>
+
+<label>
+    <input type="radio" name="deposit" value="150">
+    Large Tattoo — $150
+</label>
+
+<label>
+    <input type="radio" name="deposit" value="200">
+    Extra Large Tattoo — $200
+</label>
+
+<p>
+    Deposits are refundable according to our booking
+    and refund policy.
+</p>
+
+    <button type="submit">
+        CONTINUE TO BOOKING & PAYMENT
+    </button>
 
 </form>
 
