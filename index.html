@@ -615,5 +615,53 @@ Submit your appointment request below.
 
 </footer>
 
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const form = this;
+
+    const name = form.querySelector('[name="fullName"]').value;
+    const phone = form.querySelector('[name="phone"]').value;
+    const style = form.querySelector('[name="tattooStyle"]').value;
+    const size = form.querySelector('[name="tattooSize"]').value;
+    const placement = form.querySelector('[name="placement"]').value;
+    const description = form.querySelector('[name="description"]').value;
+    const date = form.querySelector('[name="appointmentDate"]').value;
+    const time = form.querySelector('[name="appointmentTime"]').value;
+    const deposit = form.querySelector('[name="deposit"]:checked').value;
+
+    const image = form.querySelector('[name="referenceImage"]').files[0];
+
+    const message = `
+INKTHRONE TATTOOS - NEW BOOKING REQUEST
+
+Customer Name: ${name}
+Customer Phone: ${phone}
+
+Tattoo Style: ${style}
+Tattoo Size: ${size}
+Tattoo Placement: ${placement}
+
+Design Description:
+${description}
+
+Selected Deposit: $${deposit}
+
+Preferred Appointment Date: ${date}
+Preferred Appointment Time: ${time}
+
+Reference Image: ${image ? image.name : "Not provided"}
+
+Please review this booking request.
+    `;
+
+    const whatsappURL = "https://wa.me/16893700078?text=" + encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+
+});
+</script>
 </body>
 </html>
