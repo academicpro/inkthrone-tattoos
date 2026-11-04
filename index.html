@@ -182,14 +182,25 @@ section {
 
 .gallery-item {
     background: #191919;
-    min-height: 250px;
-    border: 1px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #aaa;
+    min-height: 300px;
+    border: 1px solid #c5a253;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 6px;
 }
 
+.gallery-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item h3 {
+    color: #c5a253;
+    padding: 15px 10px;
+    font-size: 17px;
+}
 /* ABOUT */
 
 .about {
@@ -509,12 +520,18 @@ precision and craftsmanship behind every piece.
 
 <div class="gallery-grid">
 
-<div class="gallery-item">Your Tattoo Image 1</div>
-<div class="gallery-item">Your Tattoo Image 2</div>
-<div class="gallery-item">Your Tattoo Image 3</div>
-<div class="gallery-item">Your Tattoo Image 4</div>
-<div class="gallery-item">Your Tattoo Image 5</div>
-<div class="gallery-item">Your Tattoo Image 6</div>
+<div class="gallery-item">
+    <img src="images/black-grey-realism.jpg" alt="Black and grey realism tattoo">
+    <h3>Black-and-Grey Realism</h3>
+</div>
+
+<div class="gallery-item">Fine-Line Tattoos</div>
+<div class="gallery-item">Floral Tattoos</div>
+<div class="gallery-item">Lion and Animal Tattoos</div>
+<div class="gallery-item">Geometric Tattoos</div>
+<div class="gallery-item">Full-Sleeve Tattoos</div>
+<div class="gallery-item">Japanese-Style Tattoos</div>
+<div class="gallery-item">Portrait Tattoos</div>
 
 </div>
 
