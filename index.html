@@ -943,5 +943,104 @@ Please review this booking request.
 
 });
 </script>
+<!-- SUPABASE LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://pnherqvwcijxxpmvkult.supabase.co";
+const SUPABASE_KEY = "sb_publishable_puPHAUDfnQTwLV9al2phBA_jJb_wlLU";
+
+const tattooSupabase = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+// LOAD APPROVED CUSTOMER REVIEWS
+async function loadTattooReviews() {
+
+    const display = document.getElementById("reviewsDisplay");
+
+    const { data, error } = await tattooSupabase
+        .from("tattoo_reviews")
+        .select("customer_name, service, rating, review, created_at")
+        .eq("status", "approved")
+        .order("created_at", { ascending: false });
+
+    if (error) {
+        display.textContent = "Unable to load reviews at the moment.";
+        console.error(error);
+        return;
+    }
+
+    display.innerHTML = "";
+
+    if (!data || data.length === 0) {
+        display.textContent = "Be the first to share your tattoo experience!";
+        return;
+    }
+
+    data.forEach(item => {
+
+        const card = document.createElement("div");
+        card.className = "review-card";
+
+        const name = document.createElement("h3");
+        name.textContent = item.customer_name;
+
+        const service = document.createElement("p");
+        service.textContent = item.service;
+
+        const stars = document.createElement("div");
+        stars.className = "review-stars";
+        stars.textContent = "★".repeat(item.rating) +
+                            "☆".repeat(5 - item.rating);
+
+        const review = document.createElement("p");
+        review.textContent = item.review;
+
+        card.append(name, service, stars, review);
+        display.appendChild(card);
+    });
+}
+
+// SUBMIT CUSTOMER REVIEW
+document.getElementById("reviewForm").addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const form = this;
+    const message = document.getElementById("reviewMessage");
+    const button = form.querySelector(".review-submit");
+
+    button.disabled = true;
+    button.textContent = "SUBMITTING...";
+
+    const reviewData = {
+        customer_name: document.getElementById("reviewName").value.trim(),
+        service: document.getElementById("reviewService").value.trim(),
+        rating: Number(document.getElementById("reviewRating").value),
+        review: document.getElementById("reviewText").value.trim(),
+        status: "pending"
+    };
+
+    const { error } = await tattooSupabase
+        .from("tattoo_reviews")
+        .insert([reviewData]);
+
+    if (error) {
+        message.textContent = "Sorry, your review could not be submitted. Please try again.";
+        console.error(error);
+    } else {
+        message.textContent = "Thank you! Your review has been submitted for approval.";
+        form.reset();
+    }
+
+    button.disabled = false;
+    button.textContent = "SUBMIT YOUR REVIEW";
+});
+
+// LOAD REVIEWS WHEN PAGE OPENS
+loadTattooReviews();
+</script>
 </body>
 </html>
