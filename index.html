@@ -693,6 +693,64 @@ Submit your appointment request below.
 
 <!-- CONTACT -->
 
+<!-- CUSTOMER REVIEWS -->
+
+<section class="reviews" id="reviews">
+
+    <h2 class="section-title">CUSTOMER REVIEWS</h2>
+
+    <p class="reviews-intro">
+        Your experience matters to us. Share your tattoo experience
+        and let others discover the INKTHRONE difference.
+    </p>
+
+    <div id="reviewsDisplay" class="reviews-grid">
+        <p>Loading customer reviews...</p>
+    </div>
+
+    <div class="review-form-container">
+
+        <h3>SHARE YOUR EXPERIENCE</h3>
+
+        <form id="reviewForm">
+
+            <label for="reviewName">Your Name</label>
+            <input type="text" id="reviewName" name="customer_name"
+                   placeholder="Enter your name" required maxlength="80">
+
+            <label for="reviewService">Tattoo Service</label>
+            <input type="text" id="reviewService" name="service"
+                   placeholder="e.g. Custom Tattoo, Cover-Up, Fine Line"
+                   required>
+
+            <label for="reviewRating">Your Rating</label>
+            <select id="reviewRating" name="rating" required>
+                <option value="">Select your rating</option>
+                <option value="5">★★★★★ - Excellent</option>
+                <option value="4">★★★★ - Very Good</option>
+                <option value="3">★★★ - Good</option>
+                <option value="2">★★ - Fair</option>
+                <option value="1">★ - Poor</option>
+            </select>
+
+            <label for="reviewText">Your Review</label>
+            <textarea id="reviewText" name="review"
+                      placeholder="Tell us about your experience..."
+                      required minlength="10" maxlength="1000"></textarea>
+
+            <button type="submit" class="review-submit">
+                SUBMIT YOUR REVIEW
+            </button>
+
+            <p id="reviewMessage"></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- END CUSTOMER REVIEWS -->
 <section class="contact" id="contact">
 
 <h2 class="section-title">CONTACT US</h2>
